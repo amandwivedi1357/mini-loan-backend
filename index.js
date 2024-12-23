@@ -42,8 +42,8 @@ app.get('/', (req, res) => {
   res.json({ message: 'Welcome to the mini loan app API' });
 });
 
-app.use('/api/auth', authRoutes);
-app.use('/api/loans', loanRoutes);
+app.use('api/auth', authRoutes);
+app.use('api/loans', loanRoutes);
 
 // Error Handling Middleware
 app.use((err, req, res, next) => {
