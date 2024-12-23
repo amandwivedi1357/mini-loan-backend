@@ -12,20 +12,19 @@ dotenv.config();
 const app = express();
 
 
-const allowedOrigins = ['http://localhost:5173', 'https://loan-app-front.vercel.app/'];
+const allowedOrigins = ['http://localhost:5173', 'https://loan-app-front.vercel.app'];
 
 const corsOptions = {
   origin: function (origin, callback) {
-
     if (!origin || allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
+      console.error(`CORS blocked for origin: ${origin}`);
       callback(new Error('Not allowed by CORS'));
     }
   },
   credentials: true, 
 };
-
 app.use(cors(corsOptions)); 
 app.use(helmet());
 app.use(express.json());
