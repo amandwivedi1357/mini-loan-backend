@@ -28,7 +28,7 @@ const app = express();
 
 
 const corsOptions = {
-  origin: 'https://loan-app-front.vercel.app', // Your frontend URL
+  origin: ['https://loan-app-front.vercel.app','https://loan-app-black.vercel.app'], // Your frontend URL
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true // If cookies or authentication headers are needed
 };
