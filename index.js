@@ -32,6 +32,7 @@ const corsOptions = {
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true // If cookies or authentication headers are needed
 };
+app.options('*', cors(corsOptions));
 app.use(cors(corsOptions)); 
 app.use(helmet());
 app.use(express.json());
